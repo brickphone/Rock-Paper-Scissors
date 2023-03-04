@@ -18,5 +18,13 @@ body {
 
 .main-container {
   display: flex;
+  align-items: center;
+  justify-content: center;
+  columns: row;
+}
 
+.btn {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
 }
