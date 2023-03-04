@@ -43,3 +43,14 @@ body {
   height: 80%;
   object-fit: cover;
 }
+
+.score-container{
+  display: flex;
+  align-items: center;
+  columns:row;
+}
+
+.text{
+  font-size: 19px
+  margin-right:20px;
+}
