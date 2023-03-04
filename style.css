@@ -24,7 +24,22 @@ body {
 }
 
 .btn {
+  margin-top: 7%;
+  margin-right: 12px;
+  margin-left: 12px;
   height: 200px;
   width: 200px;
   border-radius: 50%;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+  background-color: #E1F5D8;
+}
+
+.btn img {
+  display: block;
+  width: 80%;
+  height: 80%;
+  object-fit: cover;
 }
