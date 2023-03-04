@@ -7,6 +7,11 @@ h1 {
   text-align: center;
 }
 
+h2 {
+  font-weight: bolder;
+  text-align: center;
+}
+
 body {
   background-color: #A4EE9F;
 }
