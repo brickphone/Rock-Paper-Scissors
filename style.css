@@ -46,11 +46,14 @@ body {
 
 .score-container{
   display: flex;
+  margin-top: 20px;
   align-items: center;
   columns:row;
+  justify-content: center;
 }
 
 .text{
-  font-size: 19px
-  margin
+  font-size: 27px;
+  margin-left: 27px;
+  margin-right:50px;
 }
