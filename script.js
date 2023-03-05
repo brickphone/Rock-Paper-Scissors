@@ -1,4 +1,4 @@
-
+// Chooses computers input
 function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3);
 
@@ -11,6 +11,7 @@ function getComputerChoice() {
   }
 }
 
+//TODO remove later just for checking
 console.log(getComputerChoice());
 
 function getPlayerChoice(playerInput) {
@@ -35,12 +36,18 @@ function getPlayerChoice() {
   });
 }
 
+//TODO remove later just for checking
 console.log(getPlayerChoice());
 
 //plays round
 function playRound() {
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
-}
 
+  if (playerSelection === computerSelection) {
+    return "It's a tie!"
+  } else if ()
+};
+
+//TODO remove later just for checking
 console.log(playRound());
