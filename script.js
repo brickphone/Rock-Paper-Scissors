@@ -25,6 +25,8 @@ function getPlayerChoice(playerInput) {
 
 
 //gets element id's for playerchoice
+console.log(getComputerChoice());
+
 function getPlayerChoice() {
   return new Promise((resolve, reject) => {
     const buttons = document.querySelectorAll(".btn");
@@ -35,28 +37,28 @@ function getPlayerChoice() {
       });
     });
   });
+}
 
-  //TODO - remove later
-  console.log(getPlayerChoice());
+//TODO - remove later
+getPlayerChoice().then(result => console.log(result));
 
-  //plays round
-  async function playRound() {
-    ;
-    const playerSelection = await getPlayerChoice();
-    const computerSelection = getComputerChoice();
+//plays round
+async function playRound() {
+  const playerSelection = await getPlayerChoice();
+  const computerSelection = getComputerChoice();
 
-    if (playerSelection === computerSelection) {
-      return "It's a tie!";
-    } else if (
-      (playerSelection === "Rock" && computerSelection === "Scissors") ||
-      (playerSelection === "Paper" && computerSelection === "Rock") ||
-      (playerSelection === "Scissors" && computerSelection === "Paper")
-    ) {
-      return "You win!";
-    } else {
-      return "You lose!";
-    };
-    //TODO - remove later
-    playRound().then(result => console.log(result));
+  if (playerSelection === computerSelection) {
+    return "It's a tie!";
+  } else if (
+    (playerSelection === "Rock" && computerSelection === "Scissors") ||
+    (playerSelection === "Paper" && computerSelection === "Rock") ||
+    (playerSelection === "Scissors" && computerSelection === "Paper")
+  ) {
+    return "You win!";
+  } else {
+    return "You lose!";
+  };
+}
 
-
+//TODO - remove later
+playRound().then(result => console.log(result));
