@@ -62,3 +62,21 @@ async function playRound() {
 
 //TODO - remove later
 playRound().then(result => console.log(result));
+
+//plays a game of five rounds
+function game() {
+  let playerScore = 0;
+  let computerScore = 0;
+
+  for (i = 0; i < 5; i++) {
+    console.log('Round${i}:')
+
+    const result = playRound();
+    if (result === "You win!") {
+      playerScore++;
+    } else if (result === "You lose!")
+      computerScore++;
+  }
+
+};
+
