@@ -64,19 +64,32 @@ async function playRound() {
 playRound().then(result => console.log(result));
 
 //plays a game of five rounds
-function game() {
+async function game() {
   let playerScore = 0;
   let computerScore = 0;
 
   for (i = 0; i < 5; i++) {
-    console.log('Round${i}:')
+    console.log(`Round ${i}:`);
 
-    const result = playRound();
+    const result = await playRound();
     if (result === "You win!") {
       playerScore++;
-    } else if (result === "You lose!")
+    } else if (result === "You lose!") {
       computerScore++;
+    }
+    console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
+    updateScore(playerScore, computerScore); // update score on screen
   }
+};
 
+game();
+
+// outputs score on screen
+function updateScore(playerScore, computerScore) {
+  const playerScoreSpan = document.getElementById("player-score");
+  const computerScoreSpan = document.getElementById("computer-score");
+
+  playerScoreSpan.innerHTML = (playerScore);
+  computerScoreSpan.innerHTML = (computerScore);
 };
 
