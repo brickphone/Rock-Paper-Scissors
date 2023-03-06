@@ -93,3 +93,8 @@ function updateScore(playerScore, computerScore) {
   computerScoreSpan.innerHTML = (computerScore);
 };
 
+function updateText(winner) {
+  const winnerUpdate = document.getElementById("winner-text");
+
+  winnerUpdate.innerHTML = ()
+}
