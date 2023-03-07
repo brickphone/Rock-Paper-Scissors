@@ -2,24 +2,24 @@ function getComputerChoice() {
   let computerChoice = Math.floor(Math.random() * 3);
 
   if (computerChoice === 0) {
-    return ("Rock");
+    return "rock";
   } else if (computerChoice === 1) {
-    return ("Paper");
+    return "paper";
   } else if (computerChoice === 2) {
-    return ("Scissors");
+    return "scissors";
   }
-}
+};
 
 //TODO - remove later
 console.log(getComputerChoice());
 
 function getPlayerChoice(playerInput) {
   if (playerInput === "rock") {
-    return "Rock";
+    return "rock";
   } else if (playerInput === "paper") {
-    return "Paper";
+    return "paper";
   } else if (playerInput === "scissors") {
-    return "Scissors";
+    return "scissors";
   }
 }
 
@@ -42,6 +42,7 @@ function getPlayerChoice() {
 //TODO - remove later
 getPlayerChoice().then(result => console.log(result));
 
+
 //plays round
 async function playRound() {
   const playerSelection = await getPlayerChoice();
@@ -50,15 +51,15 @@ async function playRound() {
   if (playerSelection === computerSelection) {
     return "It's a tie!";
   } else if (
-    (playerSelection === "Rock" && computerSelection === "Scissors") ||
-    (playerSelection === "Paper" && computerSelection === "Rock") ||
-    (playerSelection === "Scissors" && computerSelection === "Paper")
+    (playerSelection === "rock" && computerSelection === "paper") ||
+    (playerSelection === "paper" && computerSelection === "scissors") ||
+    (playerSelection === "scissors" && computerSelection === "rock")
   ) {
     return "You win!";
   } else {
     return "You lose!";
-  };
-}
+  }
+};
 
 //TODO - remove later
 playRound().then(result => console.log(result));
@@ -68,7 +69,7 @@ async function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (i = 0; i < 5; i++) {
+  for (i = 1; i < 5; i++) {
     console.log(`Round ${i}:`);
 
     const result = await playRound();
@@ -78,7 +79,8 @@ async function game() {
       computerScore++;
     }
     console.log(`Player: ${playerScore} | Computer: ${computerScore}`);
-    updateScore(playerScore, computerScore); // update score on screen
+    updateScore(playerScore, computerScore);
+    updateText(result);
   }
 };
 
@@ -89,12 +91,20 @@ function updateScore(playerScore, computerScore) {
   const playerScoreSpan = document.getElementById("player-score");
   const computerScoreSpan = document.getElementById("computer-score");
 
-  playerScoreSpan.innerHTML = (playerScore);
-  computerScoreSpan.innerHTML = (computerScore);
+  playerScoreSpan.innerHTML = playerScore;
+  computerScoreSpan.innerHTML = computerScore;
 };
+
+function checkWinner() {
+  if (computerScore > 3) {
+
+  }
+}
 
 function updateText(winner) {
   const winnerUpdate = document.getElementById("winner-text");
 
-  winnerUpdate.innerHTML = ()
+  winnerUpdate.innerHTML = winner;
 }
+
+updateText();
