@@ -69,7 +69,7 @@ async function game() {
   let playerScore = 0;
   let computerScore = 0;
 
-  for (i = 1; i < 5; i++) {
+  for (i = 1; i < 6; i++) {
     console.log(`Round ${i}:`);
 
     const result = await playRound();
@@ -96,8 +96,10 @@ function updateScore(playerScore, computerScore) {
 };
 
 function checkWinner() {
-  if (computerScore > 3) {
-
+  if (computerScore > playerScore && computerScore > 3) {
+    updateText("You lost");
+  } else if (playerScore > computerScore && playerScore > 3) {
+    updateText("You won!")
   }
 }
 
