@@ -100,6 +100,19 @@ function checkWinner() {
     updateText("You lost");
   } else if (playerScore > computerScore && playerScore > 3) {
     updateText("You won!")
+  } else {
+    return "none";
+  }
+}
+
+function getWinnerText(playerScore, computerScore) {
+  const winner = checkWinner(playerScore, computerScore)
+  if (winner === "computer") {
+    return "You lost!";
+  } else if (winner === "player") {
+    return "You won!";
+  } else {
+    return "It's a tie!";
   }
 }
 
@@ -110,3 +123,4 @@ function updateText(winner) {
 }
 
 updateText();
+getWinnerText();
